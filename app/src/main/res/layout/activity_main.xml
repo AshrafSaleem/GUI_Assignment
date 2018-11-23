@@ -1,113 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/my_bg_animation"
-    android:id="@+id/myLayout"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/countDown1"
+
+    <TextView
+        android:id="@+id/text_view_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/countdown_1"
-        android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Date"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:textColor="#FFF"
+        android:layout_marginBottom="10px"
+        />
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="10px"-->
+        <!--android:background="@drawable/bg_calendar">-->
+
+        <!--<CalendarView-->
+            <!--android:id="@+id/markDate1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="345dp" />-->
+
+    <!--</LinearLayout>-->
 
     <Button
-        android:id="@+id/countDown2"
+        android:id="@+id/save1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/countdown_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:text="@string/save_my_date"
+        android:layout_marginBottom="20px"
+        />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <Button
-        android:id="@+id/countDown3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/countdown_3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown1" />
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
 
-    <Button
-        android:id="@+id/countDown4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/countdown4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown2" />
+        <TableRow>
 
-    <Button
-        android:id="@+id/countDown5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/countdown_5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown3" />
+            <TextView
+                android:layout_column="0"
+                android:padding="3dip"
+                android:text="NO." />
 
-    <Button
-        android:id="@+id/countDown6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/countdown_6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown4" />
+            <TextView
 
-    <Button
-        android:id="@+id/countDown7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/countdown_7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown5" />
+                android:layout_column="1"
+                android:layout_span="2"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Choosen Date" />
 
-    <Button
-        android:id="@+id/countDown8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/countdown_8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown6" />
+            <TextView
+                android:layout_column="3"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Countdown" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="1"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:src="@drawable/calendaricon"
+                />
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="2"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/countDown9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/countdown_9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown7" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="3"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/countDown10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/countdown_10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDown8" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="4"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
 
-</android.support.constraint.ConstraintLayout>
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="5"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="6"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="7"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="8"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="9"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="10"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:text="Select Date"
+                android:padding="3dip" />
+            <ImageButton android:layout_column="2"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@drawable/calendaricon"/>
+            <TextView
+                android:layout_column="3"
+                android:text="0"
+                android:layout_gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

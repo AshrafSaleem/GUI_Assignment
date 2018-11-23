@@ -2,41 +2,97 @@ package com.example.ashra.assignmentgraphicaluserinterface;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
-    ConstraintLayout myLayout;
-    AnimationDrawable animationDrawable;
+    private static final String FILE_NAME = "database.txt";
 
-    private Button countDown1;
+
+    CalendarView calendarView;
+    TextView choosenDate1;
+    String date;
+    Button loadButt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myLayout = (ConstraintLayout) findViewById(R.id.myLayout);
-
-        animationDrawable = (AnimationDrawable) myLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(4500);
-        animationDrawable.setExitFadeDuration(4500);
-        animationDrawable.start();
-
-        countDown1 = (Button) findViewById(R.id.countDown1);
-        countDown1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCalendar1();
-            }
-        });
+//        calendarView = (CalendarView) findViewById(R.id.markDate1);
+//        choosenDate1 = (TextView) findViewById(R.id.choosenDate1);
+//        loadButt = (Button) findViewById(R.id.load);
+//
+//        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+//            @Override
+//            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+//                date = (month + 1) + "/" + dayOfMonth + "/" + year;
+//                choosenDate1.setText(date);
+//            }
+//        });
+//
+//        loadButt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                load(v);
+//            }
+//        });
     }
-    public void openCalendar1(){
-        Intent calendar1 = new Intent(this, Calendar1.class);
-        startActivity(calendar1);
+
+    public void save1(View v) {
+        String text = (String) choosenDate1.getText();
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+
+    }
+
+
+
+    public void load(View v) {
+        // FileInputStream fis = null;
+
+        try {
+            // fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(getAssets().open(FILE_NAME), "UTF-8");
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
+
+           // choosenDate1.setText(sb.toString());
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
