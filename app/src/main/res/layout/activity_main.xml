@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg_animation"
+    android:id="@+id/myLayout"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/countDown1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/countdown_1"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/countDown2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/countdown_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/countDown3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/countdown_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown1" />
+
+    <Button
+        android:id="@+id/countDown4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/countdown4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown2" />
+
+    <Button
+        android:id="@+id/countDown5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/countdown_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown3" />
+
+    <Button
+        android:id="@+id/countDown6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/countdown_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown4" />
+
+    <Button
+        android:id="@+id/countDown7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/countdown_7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown5" />
+
+    <Button
+        android:id="@+id/countDown8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/countdown_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown6" />
+
+    <Button
+        android:id="@+id/countDown9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/countdown_9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown7" />
+
+    <Button
+        android:id="@+id/countDown10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/countdown_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDown8" />
+
+</android.support.constraint.ConstraintLayout>

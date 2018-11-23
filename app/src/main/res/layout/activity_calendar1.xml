@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg_animation"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/calendar1View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/countdownView1"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="22sp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/currentDate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_date"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="22sp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="1dp"
+        />
+
+    <TextView
+        android:id="@+id/choosenDate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mark_your_date"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="22sp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="1dp"
+        />
+
+    <TextView
+        android:id="@+id/DiffDate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/difference_in_days"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="22sp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="1dp"
+        />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_calendar">
+
+        <CalendarView
+            android:id="@+id/markDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="345dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:text="@string/save_my_date"
+        android:layout_marginRight="120dp"
+        android:layout_marginTop="1dp"
+    />
+
+    <Button
+        android:id="@+id/load"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button" />
+
+
+</LinearLayout>
+

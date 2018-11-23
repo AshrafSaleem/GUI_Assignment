@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AssignmentGraphicalUserInterface</string>
+    <string name="countdown_1">COUNTDOWN 1</string>
+    <string name="countdown_2">COUNTDOWN 2</string>
+    <string name="countdown_3">COUNTDOWN 3</string>
+    <string name="countdown4">COUNTDOWN4</string>
+    <string name="countdown_5">COUNTDOWN 5</string>
+    <string name="countdown_6">COUNTDOWN 6</string>
+    <string name="countdown_7">COUNTDOWN 7</string>
+    <string name="countdown_8">COUNTDOWN 8</string>
+    <string name="countdown_9">COUNTDOWN 9</string>
+    <string name="countdown_10">COUNTDOWN 10</string>
+    <string name="countdownView1">Countdown 1</string>
+    <string name="current_date">Current Date</string>
+    <string name="mark_your_date">Mark Your Date</string>
+    <string name="difference_in_days">Difference In Days</string>
+    <string name="save_my_date">Save My Date</string>
+    <string name="button">Button</string>
+</resources>
