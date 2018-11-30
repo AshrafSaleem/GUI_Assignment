@@ -86,11 +86,14 @@
                 android:layout_gravity="center"
                 android:padding="3dip" />
             <TextView
+                android:id="@+id/C1"
                 android:layout_column="1"
                 android:layout_gravity="center"
                 android:text="Select Date"
                 android:padding="3dip" />
-            <ImageButton android:layout_column="2"
+            <ImageButton
+                android:id="@+id/B1"
+                android:layout_column="2"
                 android:src="@drawable/calendaricon"
                 />
             <TextView
@@ -101,6 +104,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/C2"
                 android:layout_column="0"
                 android:text="2"
                 android:layout_gravity="center"
@@ -110,10 +114,11 @@
                 android:layout_gravity="center"
                 android:text="Select Date"
                 android:padding="3dip" />
-            <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+            <ImageButton
+                android:id="@+id/B2"
+                android:layout_column="2"
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -133,9 +138,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -155,9 +159,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -177,9 +180,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -198,9 +200,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -220,9 +221,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -242,9 +242,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -264,9 +263,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
@@ -286,9 +284,8 @@
                 android:text="Select Date"
                 android:padding="3dip" />
             <ImageButton android:layout_column="2"
-                android:layout_width="50px"
-                android:layout_height="50px"
-                android:src="@drawable/calendaricon"/>
+                android:src="@drawable/calendaricon"
+                />
             <TextView
                 android:layout_column="3"
                 android:text="0"
