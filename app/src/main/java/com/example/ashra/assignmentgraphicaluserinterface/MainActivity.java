@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -24,7 +25,7 @@ import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class MainActivity extends AppCompatActivity {//implements DatePickerDialog.OnDateSetListener {
 
     private static final String FILE_NAME = "database.txt";
 
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     String date;
     Button loadButt;
     DatePickerDialog.OnDateSetListener dateListener1,dateListener2;
+
+    RowRecordCollections rc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         TextView text_view_date = findViewById(R.id.text_view_date);
         text_view_date.setText(currentDate);
 
+        rc = new RowRecordCollections((TableLayout) findViewById(R.id.TableCount), this);
 //        calendarView = (CalendarView) findViewById(R.id.markDate1);
 //        choosenDate1 = (TextView) findViewById(R.id.choosenDate1);
 //        loadButt = (Button) findViewById(R.id.load);
@@ -65,41 +70,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 //                load(v);
 //            }
 //        });
-        //IMAGE BUTTON FOR CALENDAR
-        ImageButton b1 = (ImageButton) findViewById(R.id.B1);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-                    public void onClick(View v) {
-                DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getSupportFragmentManager(), "date picker");
-            }
-
-        });
-
-        ImageButton b2 = (ImageButton) findViewById(R.id.B2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getSupportFragmentManager(), "date picker");
-            }
-        });
-    }
-
-    //IMAGE TO SET DATE
-    @Override
-
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, year);
-        c.set(Calendar.MONTH, month);
-        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance(DateFormat.MEDIUM).format(c.getTime());
-
-        TextView c1 = (TextView) findViewById(R.id.C1);
-        c1.setText(currentDateString);
 
     }
+
 
     public void save1(View v) {
         String text = (String) choosenDate1.getText();
