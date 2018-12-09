@@ -4,6 +4,8 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
@@ -11,6 +13,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,11 +26,12 @@ import java.util.Locale;
 
 
 public class RowRecord extends AppCompatActivity {//implements DatePickerDialog.OnDateSetListener {
-    private int id = 0;
-    private Calendar selectedDate = Calendar.getInstance();
+    public int id = 0;
+    public Calendar selectedDate = Calendar.getInstance();
     public ImageButton countdownButtons;
     private int countDown;
     Calendar myCalendar = Calendar.getInstance();
+    public boolean isSet;
 
     public TextView idTextView;
     public TextView choosenDateTextView;
@@ -39,9 +47,11 @@ public class RowRecord extends AppCompatActivity {//implements DatePickerDialog.
         idTextView = new TextView(c);
         choosenDateTextView = new TextView(c);
         countDownTextView = new TextView(c);
-
+        isSet = false;
         countdownButtons.setImageResource(R.drawable.calendaricon);
-
+        idTextView.setGravity(Gravity.CENTER);
+        choosenDateTextView.setGravity(Gravity.CENTER);
+        countDownTextView.setGravity(Gravity.CENTER);
         idTextView.setText(Integer.toString(id));
         choosenDateTextView.setText("Select Date");
         countDownTextView.setText(Integer.toString(countDown));
@@ -54,6 +64,7 @@ public class RowRecord extends AppCompatActivity {//implements DatePickerDialog.
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 updateLabel( year,  monthOfYear,  dayOfMonth);
+                isSet = true;
             }
         };
         countdownButtons.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +81,8 @@ public class RowRecord extends AppCompatActivity {//implements DatePickerDialog.
         });
     }
 
-    private void updateLabel(int year, int month, int dayOfMonth) {
+    public void updateLabel(int year, int month, int dayOfMonth) {
+        Log.d("DEBUG", "updateLabel: "+dayOfMonth+" " +month + " "+year);
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
 
@@ -108,4 +120,11 @@ public class RowRecord extends AppCompatActivity {//implements DatePickerDialog.
         idTextView.setText(Integer.toString(id));
     }
 
+
+
+
+
 }
+
+
+

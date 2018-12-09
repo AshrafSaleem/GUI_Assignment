@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {//implements DatePickerDial
         text_view_date.setText(currentDate);
 
         rc = new RowRecordCollections((TableLayout) findViewById(R.id.TableCount), this);
+        rc.load(this);
+        Button saveDate = findViewById(R.id.saveDate);
+        saveDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rc.save(v.getContext());
+            }
+        });
+
 //        calendarView = (CalendarView) findViewById(R.id.markDate1);
 //        choosenDate1 = (TextView) findViewById(R.id.choosenDate1);
 //        loadButt = (Button) findViewById(R.id.load);
@@ -75,25 +84,11 @@ public class MainActivity extends AppCompatActivity {//implements DatePickerDial
 
 
     public void save1(View v) {
-        String text = (String) choosenDate1.getText();
-        FileOutputStream fos = null;
 
-        try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            if (fos != null)
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-        }
 
     }
 
-
+/*
 
     public void load(View v) {
         // FileInputStream fis = null;
@@ -116,5 +111,5 @@ public class MainActivity extends AppCompatActivity {//implements DatePickerDial
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
